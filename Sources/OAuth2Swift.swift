@@ -164,7 +164,7 @@ open class OAuth2Swift: OAuthSwift {
         parameters["code"] = code
         parameters["grant_type"] = "authorization_code"
         parameters["redirect_uri"] = callbackURL.absoluteString.safeStringByRemovingPercentEncoding
-
+        parameters["expires_in"] = 31536000 // expire in one year
         return requestOAuthAccessToken(withParameters: parameters, headers: headers, success: success, failure: failure)
     }
 
