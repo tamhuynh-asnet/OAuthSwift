@@ -51,19 +51,23 @@ extension OAuthSwiftClient {
     open func objc_request(_ urlString: String, method: OAuthSwiftHTTPRequest.Method, parameters: OAuthSwift.Parameters = [:], headers: OAuthSwift.Headers? = nil, body: Data? = nil, checkTokenExpiration: Bool = true, success: OAuthSwiftHTTPRequest.SuccessHandler?, failure: OAuthSwiftHTTPRequest.Obj_FailureHandler?) -> OAuthSwiftRequestHandle? {
         return request(urlString, method: method, parameters: parameters, headers: headers, body: body, checkTokenExpiration: checkTokenExpiration, success: success, failure: failure)
     }
-
+  
+    @discardableResult
     open func get(_ urlString: String, parameters: OAuthSwift.Parameters = [:], headers: OAuthSwift.Headers? = nil, success: OAuthSwiftHTTPRequest.SuccessHandler?, failure: OAuthSwiftHTTPRequest.Obj_FailureHandler?) -> OAuthSwiftRequestHandle? {
         return self.request(urlString, method: .GET, parameters: parameters, headers: headers, success: success, failure: failure)
     }
 
+    @discardableResult
     open func post(_ urlString: String, parameters: OAuthSwift.Parameters = [:], headers: OAuthSwift.Headers? = nil, body: Data? = nil, success: OAuthSwiftHTTPRequest.SuccessHandler?, failure: OAuthSwiftHTTPRequest.Obj_FailureHandler?) -> OAuthSwiftRequestHandle? {
         return self.request(urlString, method: .POST, parameters: parameters, headers: headers, body: body, success: success, failure: failure)
     }
 
+    @discardableResult
     open func put(_ urlString: String, parameters: OAuthSwift.Parameters = [:], headers: OAuthSwift.Headers? = nil, body: Data? = nil, success: OAuthSwiftHTTPRequest.SuccessHandler?, failure: OAuthSwiftHTTPRequest.Obj_FailureHandler?) -> OAuthSwiftRequestHandle? {
         return self.request(urlString, method: .PUT, parameters: parameters, headers: headers, body: body, success: success, failure: failure)
     }
 
+    @discardableResult
     open func delete(_ urlString: String, parameters: OAuthSwift.Parameters = [:], headers: OAuthSwift.Headers? = nil, success: OAuthSwiftHTTPRequest.SuccessHandler?, failure: OAuthSwiftHTTPRequest.Obj_FailureHandler?) -> OAuthSwiftRequestHandle? {
         return self.request(urlString, method: .DELETE, parameters: parameters, headers: headers, success: success, failure: failure)
     }
